@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      body,
+      html {
+        margin: 0;
+        background: #fafafa;
+        display: flex;
+        height: 100vh;
+        width: 100vw;
+      }
+    </style>
+  </head>
+  <body>
+    <rete-editor id="editor" style="flex: 1"> </rete-editor>
+
+    <script type="module">
+      import Rete from 'rete';
+      import { ReteEditor } from '../dist';
+
+      const numSocket = new Rete.Socket('Number value');
+
+      class Multiply extends Rete.Component {
+        constructor() {
+          super('Multiply');
+        }
+
+        builder(node) {
+          node.addInput(new Rete.Input('num1', 'Number', numSocket));
+          node.addInput(new Rete.Input('num2', 'Number', numSocket));
+          node.addOutput(new Rete.Output('output', 'Number', numSocket));
+        }
+
+        worker() {}
+      }
+      customElements.define('rete-editor', ReteEditor);
+      document.getElementById('editor').components = [Multiply];
+    </script>
+  </body>
+</html>
