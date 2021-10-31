@@ -1,0 +1,104 @@
+{
+  "schemaVersion": "1.0.0",
+  "readme": "",
+  "modules": [
+    {
+      "kind": "javascript-module",
+      "path": "src/index.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "ReteEditor",
+          "declaration": {
+            "name": "ReteEditor",
+            "module": "./rete-editor"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/rete-editor.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "ReteEditor",
+          "members": [
+            {
+              "kind": "field",
+              "name": "editor",
+              "type": {
+                "text": "NodeEditor"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "data",
+              "type": {
+                "text": "Data | undefined"
+              },
+              "attribute": "data"
+            },
+            {
+              "kind": "field",
+              "name": "components",
+              "type": {
+                "text": "Array<new () => Component>"
+              },
+              "default": "[]",
+              "attribute": "components"
+            },
+            {
+              "kind": "field",
+              "name": "_editorEl",
+              "type": {
+                "text": "HTMLElement"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_dockEl",
+              "type": {
+                "text": "HTMLElement"
+              }
+            }
+          ],
+          "attributes": [
+            {
+              "name": "data",
+              "type": {
+                "text": "Data | undefined"
+              },
+              "fieldName": "data"
+            },
+            {
+              "name": "components",
+              "type": {
+                "text": "Array<new () => Component>"
+              },
+              "default": "[]",
+              "fieldName": "components"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "ReteEditor",
+          "declaration": {
+            "name": "ReteEditor",
+            "module": "src/rete-editor.ts"
+          }
+        }
+      ]
+    }
+  ]
+}
